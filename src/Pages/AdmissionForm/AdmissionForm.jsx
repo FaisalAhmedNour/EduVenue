@@ -1,42 +1,47 @@
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders/AuthProviders";
+import Swal from "sweetalert2";
 
 const AdmissionForm = () => {
     const id = useParams();
+
+    const {user} = useContext(AuthContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         const submitForm = {
+            college_id: id,
             name: data.name,
             subject: data.subject,
             email: data.email,
-            phone: data.phone,
+            phone: data.number,
             address: data.address,
             birth_date: data.birth_date
         }
         console.log(submitForm)
-        // console.log(submitForm);
-        // fetch('https://camp-sportopia-server-faisalahmednour.vercel.app/classes', {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(submitForm)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             reset()
-        //             Swal.fire({
-        //                 position: 'center',
-        //                 icon: 'success',
-        //                 title: 'Successfully Added class...',
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             })
-        //         }
-        //     })
+        fetch(`http://localhost:5000/admitted_users/${user?.email}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(submitForm)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    reset()
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Successfully Added class...',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     };
 
     return (
@@ -88,7 +93,7 @@ const AdmissionForm = () => {
                                         <span className="label-text font-medium">Candidate Phone number</span>
                                     </label>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder="Phone number"
                                         className="input input-bordered"
                                         {...register("number", { required: true })}
@@ -127,7 +132,7 @@ const AdmissionForm = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Admit</button>
                             </div>
                         </form>
                     </div>

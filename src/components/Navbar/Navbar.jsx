@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders/AuthProviders";
 
 const Navbar = () => {
     // TODO: activate links
@@ -6,8 +8,11 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to='/colleges'>Colleges</Link></li>
         <li><Link to='/admission'>Admission</Link></li>
-        <li><a>My College</a></li>
+        <li><Link to='/my_college'>My College</Link></li>
     </>
+
+    const { user } = useContext(AuthContext)
+    // console.log(user)
 
     return (
         <div className="navbar bg-white rounded-md">
@@ -32,12 +37,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-[#f3f3f3]">Log in</a>
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full border-2 border-[#7070ce]">
-                        <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg" />
-                    </div>
-                </label>
+                {
+                    user ?
+                        <div className="tooltip hover:tooltip-open tooltip-left" data-tip="Profile">
+                            <Link to={`/profile`} className="btn bg-[#f3f3f3]">{user?.displayName}</Link>
+                        </div> :
+                        <Link to='/login' className="btn bg-[#f3f3f3]">Log in</Link>
+                }
             </div>
         </div>
     );

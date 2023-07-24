@@ -16,10 +16,10 @@ const AllColleges = () => {
                             <h2 className="card-title">{college?.name}</h2>
                             <div className="rating rating-sm">
                                 <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) >= 1 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
-                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) > 2 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
-                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) > 3 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
-                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) > 4 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
-                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) > 5 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
+                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) >= 2 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
+                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) >= 3 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
+                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) >= 4 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
+                                <input disabled type="radio" name="rating-2" className={`mask mask-star-2 ${parseInt(college?.Rating) >= 5 ? "bg-orange-400" : "bg-[#c2a8a8]"} `} />
                             </div>
                             <p className="font-medium">Admission date: {college?.admission_date}</p>
                             <p className="font-medium">Number of the research: {college?.research_works?.length}</p>
