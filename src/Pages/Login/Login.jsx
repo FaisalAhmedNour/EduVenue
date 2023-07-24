@@ -54,7 +54,7 @@ export default function Login() {
                     name: data.user.displayName, email: data.user.email
                 }
                 // console.log(savedUser)
-                fetch('http://localhost:5000/users', {
+                fetch('https://eduvenueserver.vercel.app/users', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -82,7 +82,7 @@ export default function Login() {
                     name: data.user.displayName, email: data.user.email
                 }
                 // console.log(savedUser)
-                fetch('http://localhost:5000/users', {
+                fetch('https://eduvenueserver.vercel.app/users', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -146,10 +146,10 @@ export default function Login() {
                                     <img className="w-6" src={googleIcon} alt="" />
                                     CONTINUE WITH GOOGLE
                                 </button>
-                                <button 
-                                    onClick={handleGithubLogIn} 
+                                <button
+                                    onClick={handleGithubLogIn}
                                     className="btn btn-outline"
-                                    >
+                                >
                                     <img className="w-6" src={githubIcon} alt="" />
                                     Github
                                 </button>

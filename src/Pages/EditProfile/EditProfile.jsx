@@ -21,7 +21,7 @@ const EditProfile = () => {
             address: data.address,
         }
         console.log(updatedUser)
-        fetch(`http://localhost:5000/users/${currentUser.email}`, {
+        fetch(`https://eduvenueserver.vercel.app/users/${currentUser.email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

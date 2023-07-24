@@ -7,7 +7,7 @@ const Admission = () => {
     console.log(colleges);
 
     return (
-        <div className="grid grid-cols-3 gap-5 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10">
             {
                 colleges.map(college => <Link to={`/admission_form/${college?._id}`} key={college?._id}>
                     <div className="bg-white py-4 px-5 font-semibold flex justify-between align-middle">

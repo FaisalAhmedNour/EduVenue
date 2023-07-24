@@ -8,9 +8,9 @@ const AllColleges = () => {
     return (
         <div className="my-10">
             <p className="text-center text-2xl font-bold text-[#101030] mb-5">All Colleges</p>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    colleges.map(college => <div key={college._id} className="card card-compact w-96 bg-base-100 shadow-xl">
+                    colleges.map(college => <div key={college._id} className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
                         <figure className="w-full h-[200px]"><img src={college?.picture} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{college?.name}</h2>

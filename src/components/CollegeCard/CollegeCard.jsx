@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const CollegeCard = ({ college }) => {
     const { picture, name, research_history, events, sports, admission_date, _id } = college
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl mb-5">
-            <figure className="w-1/2"><img src={picture} className="w-full h-full" alt="Album" /></figure>
-            <div className="card-body w-1/2">
+        <div className="card card-side bg-base-100 shadow-xl mb-5 flex flex-col lg:flex-row">
+            <figure className=" lg:w-1/2"><img src={picture} className="w-full h-full" alt="Album" /></figure>
+            <div className="card-body lg:w-1/2">
                 <h2 className="card-title text-2xl">{name}</h2>
                 <p><span className="font-semibold">Research History: </span>{research_history}</p>
                 <p><span className="font-semibold">Events: </span><br />

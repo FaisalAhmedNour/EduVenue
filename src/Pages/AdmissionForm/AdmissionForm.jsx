@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const AdmissionForm = () => {
     const id = useParams();
 
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -22,7 +22,7 @@ const AdmissionForm = () => {
             birth_date: data.birth_date
         }
         console.log(submitForm)
-        fetch(`http://localhost:5000/admitted_users/${user?.email}`, {
+        fetch(`https://eduvenueserver.vercel.app/admitted_users/${user?.email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

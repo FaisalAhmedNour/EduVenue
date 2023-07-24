@@ -67,53 +67,55 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="mt-2 ms-0 lg:ms-12">
-                        <p className="font-bold text-lg text-[#ffffff]">Contact Us</p>
-                        <ul className="mt-6 space-y-1 text-sm">
-                            <li>
-                                <span className="text-[#ced2d8]">Email: </span>
-                                <Link className="text-[#0056b3]">info@eduvenue.com</Link>
-                            </li>
-                            <li>
-                                <span className="text-[#ced2d8]">Phone: </span>
-                                <Link className="text-[#0056b3]">+88 018404 25516</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="mt-2 ">
-                        <p className="font-bold text-lg text-[#ffffff]">Services</p>
-                        <ul className="mt-6 text-sm flex gap-8">
-                            <div>
-                                {/* TODO: activate links */}
-                                <li className="mb-3">
-                                    <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
-                                        Home
-                                    </a>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2">
+                        <div className="mt-2 ms-0 lg:ms-12">
+                            <p className="font-bold text-lg text-[#ffffff]">Contact Us</p>
+                            <ul className="mt-6 space-y-1 text-sm">
+                                <li>
+                                    <span className="text-[#ced2d8]">Email: </span>
+                                    <Link className="text-[#0056b3]">info@eduvenue.com</Link>
                                 </li>
-                                <li className="mb-3">
-                                    <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
-                                        Colleges
-                                    </a>
+                                <li>
+                                    <span className="text-[#ced2d8]">Phone: </span>
+                                    <Link className="text-[#0056b3]">+88 018404 25516</Link>
                                 </li>
-                                <li className="mb-3">
-                                    <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
-                                        Admission
-                                    </a>
-                                </li>
-                            </div>
-                            <div>
-                                <li className="mb-3">
-                                    <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li className="mb-3">
-                                    <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
-                                        Contact Us
-                                    </a>
-                                </li>
-                            </div>
-                        </ul>
+                            </ul>
+                        </div>
+                        <div className="mt-2 ">
+                            <p className="font-bold text-lg text-[#ffffff]">Services</p>
+                            <ul className="mt-6 text-sm flex gap-8">
+                                <div>
+                                    {/* TODO: activate links */}
+                                    <li className="mb-3">
+                                        <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li className="mb-3">
+                                        <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
+                                            Colleges
+                                        </a>
+                                    </li>
+                                    <li className="mb-3">
+                                        <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
+                                            Admission
+                                        </a>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li className="mb-3">
+                                        <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
+                                            About Us
+                                        </a>
+                                    </li>
+                                    <li className="mb-3">
+                                        <a href="#" className="text-[#ced2d8] transition hover:opacity-75">
+                                            Contact Us
+                                        </a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-8 border-t border-gray-100 pt-8">

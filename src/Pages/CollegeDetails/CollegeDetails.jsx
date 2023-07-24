@@ -6,7 +6,7 @@ const CollegeDetails = () => {
     const { id } = useParams();
 
     const { data: colleges } = useQuery(['colleges', id], async () => {
-        const res = await fetch(`http://localhost:5000/colleges/${id}`)
+        const res = await fetch(`https://eduvenueserver.vercel.app/colleges/${id}`)
         return res.json();
     })
 
